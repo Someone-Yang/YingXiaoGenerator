@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div id="app">
+<p>营销号名称：</p>
+<el-input id="yxhname" v-model="vyxhname" placeholder="请输入名称"></el-input>
+<p>今天是什么日子：</p>
+<el-input id="yxhday" v-model="vday" placeholder="请输入日子"></el-input>
+<p>被营销主体：</p>
+<el-input id="yxhthing" v-model="vthing" placeholder="请输入主体"></el-input>
+<p>被营销的事件：</p>
+<el-input id="yxhwhat" v-model="vwhat" placeholder="请输入事件"></el-input>
+<p>被营销的事件另一种说法：</p>
+<el-input id="yxhwhat2" v-model="vwhat2" placeholder="请输入事件"></el-input>
+<br />
+<el-button type="primary" plain @click="submityxh">生成</el-button>
+<p id="yxhjg"></p>
+<hr />
+<font style="color: blue;">使用Vue.js + Element前端框架实现。本作品仅供娱乐。</font>
+</div>
+</body>
+  <!-- import Vue before Element -->
+  <script src="./vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="./index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return {
+		vyxhname: '老八看世界',
+		vday:'司南炸服的美好一天',
+		vthing: '命他续',
+		vwhat: '能复活玩家',
+		vwhat2: '复活图腾能复活玩家'
+		}
+      },
+	   methods: {
+	   submityxh(){
+	    var yxhname = document.getElementById('yxhname').value
+		var day = document.getElementById('yxhday').value
+		var what = document.getElementById('yxhthing').value
+		var thing = document.getElementById('yxhwhat').value
+		var thing2 = document.getElementById('yxhwhat2').value
+		document.getElementById('yxhjg').innerHTML = "大家好，这里是" + yxhname + "，今天是" + day + "，在这特殊的一天里，感谢你观看我们的视频，双击屏幕点赞再走哦！<br />你知道" + what + thing + "是怎么一回事吗？小编相信大家对" + what + "非常熟悉了。但是你知道" + what + thing + "到底是怎么回事吗？" + what + thing + "是因为" + what + "的什么特点呢？让小编带大家深入了解一下吧！<br />小编了解到，" + what + thing + "其实就是" + thing2 + "，但是大家一定很惊讶为什么" + what + thing + "，因为" + what + thing + "这件事看起来很平常。其实，小编也不明白其中的奥秘，事实就是如此，我们不能改变世界。<br />关于" + what + thing + "，小编就和大家讨论到这里了，如果你对" + thing2 + "有什么独到的见解，欢迎在评论区留言哦！记得双击+关注，我们下期再见！"
+	   }
+      }
+    })
+  </script>
+</html>
